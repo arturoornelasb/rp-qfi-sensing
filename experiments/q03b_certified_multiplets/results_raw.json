@@ -1,0 +1,102 @@
+{
+ "config": {
+  "generations": [
+   5,
+   6,
+   7,
+   8
+  ],
+  "fit_sizes": 3,
+  "n_vdraws": 8,
+  "window": 0.25,
+  "max_chi_states": 512,
+  "clus_rel_tol": 1e-10,
+  "cert_val_tol": 1e-12,
+  "cert_res_tol": 1e-10,
+  "seed": 12,
+  "r1_margin": 0.15,
+  "r2_tol": 0.15
+ },
+ "sizes": {
+  "5": {
+   "N": 366,
+   "cert": {
+    "width": 5.997024812823231,
+    "agree": 1.2434497875801753e-14,
+    "resid": 3.3965885659625883e-15,
+    "ok": true
+   },
+   "status": "OK",
+   "n_states": 105,
+   "n_multiplets": 31,
+   "max_multiplet": 40,
+   "mln_chi_d": 5.177603982484612,
+   "mln_chi_g": 5.306331197212726,
+   "mln_ipr": -3.840841394691868,
+   "mln_ipr_nondeg": -4.7318822603342845
+  },
+  "6": {
+   "N": 1095,
+   "cert": {
+    "width": 5.9993609797100955,
+    "agree": 2.398081733190338e-14,
+    "resid": 4.212342280540682e-15,
+    "ok": true
+   },
+   "status": "OK",
+   "n_states": 319,
+   "n_multiplets": 66,
+   "max_multiplet": 121,
+   "mln_chi_d": 6.442305054647085,
+   "mln_chi_g": 6.604444769029688,
+   "mln_ipr": -4.287088004228825,
+   "mln_ipr_nondeg": -5.555609855246654
+  },
+  "7": {
+   "N": 3282,
+   "cert": {
+    "width": 5.999866318411591,
+    "agree": 3.907985046680551e-14,
+    "resid": 5.27008992001754e-15,
+    "ok": true
+   },
+   "status": "OK",
+   "n_states": 541,
+   "n_multiplets": 26,
+   "max_multiplet": 364,
+   "mln_chi_d": 6.882994966525293,
+   "mln_chi_g": 7.40329567665979,
+   "mln_ipr": -3.7947742871222725,
+   "mln_ipr_nondeg": -6.59765353952553
+  },
+  "8": {
+   "N": 9843,
+   "cert": {
+    "width": 5.999972509162861,
+    "agree": 6.17284001691587e-14,
+    "resid": 2.4093574357841874e-14,
+    "ok": true
+   },
+   "status": "OK",
+   "n_states": 738,
+   "n_multiplets": 51,
+   "max_multiplet": 363,
+   "mln_chi_d": 3.0170920146558946,
+   "mln_chi_g": 3.44994268281725,
+   "mln_ipr": -4.962349558966071,
+   "mln_ipr_nondeg": -7.632609684090572
+  }
+ },
+ "fits": {
+  "alpha_diag": -1.5599277616895537,
+  "alpha_goe": -1.4366722980984945,
+  "enh": -0.12325546359105921,
+  "d2_meas": 0.30756514475947894,
+  "dev": 0.8156903188315803
+ },
+ "verdict": {
+  "R1": "NO EFFECT",
+  "R2": "DOES NOT EXTEND (report the measured pair)"
+ },
+ "wall_time_s": 524.3
+}

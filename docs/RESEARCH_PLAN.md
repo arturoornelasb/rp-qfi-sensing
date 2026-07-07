@@ -105,6 +105,20 @@ eigenbasis -- correct degenerate perturbation theory -- then chi over
 states outside the multiplet; full-window statistics, no exclusion).
 Readings frozen in `experiments/q03b_certified_multiplets/README.md`.
 
+**[DONE 2026-07-07 -- NO EFFECT; DOES NOT EXTEND.]** All four sizes
+CERTIFIED (evr driver passes at N = 9843, agreement 6.2e-14 -- the numpy
+dsyevd failure is bypassed); full-window statistics recovered
+(105/319/541/738 states). Frozen verdict: enh = -0.123 (|enh| < 0.15 ->
+NO EFFECT); dev vs 1 - D2 = 0.816 (DOES NOT EXTEND). Caveat: exponents
+carry composition scatter (giant multiplets vs regular states mix
+size-dependently; ln chi non-monotone) -- the robust statement is the
+absence of consistent enhancement. **Combined Q1b + Q3b finding: the
+1 - D2 enhancement is RP-PHASE-SPECIFIC, not generic fractality** --
+answers report #6 open-Q3's criterion question; the plate program's
+RP-like regime is the metrologically relevant one. Q3c (optional,
+design level): stratified/energy-resolved gasket analysis if the paper
+needs this leg sharpened.
+
 ## Deferred / watch
 
 - Report #6 open-Q3 (sign criterion: RP enhances, 3D-Anderson suppresses --

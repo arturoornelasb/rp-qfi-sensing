@@ -85,6 +85,26 @@ suppressed branch is the Anderson-like sign of report #6 open-Q3); R2 =
 exploratory, does the RP formula enh = 1 - D2 extend to geometric
 fractality. Either outcome is a finding.
 
+**[DONE-AS-RUN 2026-07-07 -- DEGENERACY-LIMITED; no physics conclusions.]**
+Two instrument defects diagnosed by direct test: (1) np.linalg.eigh WITH
+vectors returns eigenvalues off by up to 31 (width-6 spectrum) at
+N = 9843 -- the g = 8 cell was garbage; validated clean at N <= 6144 on
+gRP matrices, so Q1/Q1b are unaffected; (2) the degeneracy-EXCLUSION
+design starves statistics (84-95% of window states are in exact
+multiplets). Both fixed in Q3b. PITFALL recorded: eigenpair certification
+is mandatory in this repo (same discipline as plates-rp-fem).
+
+## Q3b -- Sierpinski QFI, certified instrument [PREREGISTERED 2026-07-07; runner ready]
+
+Same physics questions and R1/R2 gates as Q3, fixed instrument:
+certified eigenpairs (eigvalsh reference + scipy driver='evr' vectors;
+per-size agreement <= 1e-12 x width and residual <= 1e-10 x width gates;
+failures drop the size as INSTRUMENT-FAIL) and degenerate-multiplet
+SUBSPACE treatment (rotate each in-window multiplet by the projected V's
+eigenbasis -- correct degenerate perturbation theory -- then chi over
+states outside the multiplet; full-window statistics, no exclusion).
+Readings frozen in `experiments/q03b_certified_multiplets/README.md`.
+
 ## Deferred / watch
 
 - Report #6 open-Q3 (sign criterion: RP enhances, 3D-Anderson suppresses --

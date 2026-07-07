@@ -72,14 +72,18 @@ the sensed parameter; per-window <r> statistics alongside chi_f(h);
 readings to be frozen in the experiment README before its run. Confirms or
 kills the platform paper's minimal model.
 
-## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [REGISTERED, design level]
+## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [PREREGISTERED 2026-07-07; runner ready]
 
 Report #6 open-Q2: no metrological quantity has ever been computed in the
-geometry-only Sierpinski non-ergodic-extended system. Compute QFI /
-fidelity susceptibility for tight-binding states on a Sierpinski gasket
-(fractality from geometry, zero disorder): is chi enhanced, and does it
-track the (geometric) D2? The decisive isolation leg complementing Q1.
-Runner deferred until Q1 executes.
+geometry-only Sierpinski non-ergodic-extended system. Tight-binding gasket
+g = 5..8 (N up to 9843), zero disorder, V-ensemble statistics (8 draws),
+exact-degeneracy exclusion (the gasket spectrum is degeneracy-heavy;
+DEGENERACY-LIMITED reported if usable states fall below 64). Frozen
+readings in `experiments/q03_sierpinski_nem/README.md`: R1 = sign of the
+enhancement (ENHANCED / NO EFFECT / SUPPRESSED at margin 0.15 -- the
+suppressed branch is the Anderson-like sign of report #6 open-Q3); R2 =
+exploratory, does the RP formula enh = 1 - D2 extend to geometric
+fractality. Either outcome is a finding.
 
 ## Deferred / watch
 

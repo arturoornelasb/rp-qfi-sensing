@@ -49,6 +49,15 @@ gammas (R2 unchanged). Readings frozen in
 `experiments/q01b_enhancement_gate/README.md` BEFORE its run (gate chosen
 from Q1's seed-7 data; Q1b's draws are independent).
 
+**[DONE 2026-07-07 -- SUPPORTS, frozen criteria.]** R1' 4/4 within 0.15
+(deviations 0.015/0.018/0.009/0.078; corr(enh, 1-D2_meas) = 0.996);
+R2 monotone, delta 0.709. The D2 sensitivity figure of merit --
+chi-enhancement exponent = 1 - D2 along the RP fractal phase at fixed
+criticality distance, for field-like couplings -- is CONFIRMED in-house
+under preregistered criteria. This is the Part-2 paper's core numerical
+result; next legs: Q2 (platform coexistence) and Q3 (fractality without
+disorder).
+
 ## Q2 -- DR-A: the platform coexistence test [REGISTERED, design level]
 
 Report #5 open-Q2, the decisive test of the Part-1 minimal model: does an

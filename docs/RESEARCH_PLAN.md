@@ -58,19 +58,22 @@ under preregistered criteria. This is the Part-2 paper's core numerical
 result; next legs: Q2 (platform coexistence) and Q3 (fractality without
 disorder).
 
-## Q2 -- DR-A: the platform coexistence test [REGISTERED, design level]
+## Q2 -- DR-A: the platform coexistence test [PREREGISTERED 2026-07-07; runner ready]
 
 Report #5 open-Q2, the decisive test of the Part-1 minimal model: does an
-interacting tilted+disordered 1D lattice (Bose-Hubbard chain at small
-filling, or interacting Aubry-Andre-Harper) show a genuine Poisson->GOE
-(RP-type) crossover in the SAME accessible parameter window where its
-fidelity susceptibility to the tilt h is large -- and does the chi_f
-DISTRIBUTION carry the predicted GOE x^-2 heavy tail? Design: exact
-diagonalization, L ~ 12-16 sites / few bosons (Hilbert dims 1e3-1e4),
-disorder + interaction knobs source the RP structure, tilt enters ONLY as
-the sensed parameter; per-window <r> statistics alongside chi_f(h);
-readings to be frozen in the experiment README before its run. Confirms or
-kills the platform paper's minimal model.
+interacting disordered lattice show its Poisson->GOE crossover in the SAME
+parameter window where the fidelity susceptibility to the tilt is large --
+and does the chi_f distribution carry the predicted GOE x^-2 heavy tail?
+Instantiation: t-V chain (spinless fermions, J = V = 1) + onsite disorder
+W + tilt as the sensed parameter at h = 0 (the canonical interacting
+ergodic<->MBL crossover; Bose-Hubbard/AAH variants registered as Q2b
+alternates). L = 12 (dim 924, 200 realizations) and L = 14 (dim 3432, 64),
+W in {0.5..8}; first realization of every cell certified vs eigvalsh;
+L = 16 registered as a windowed-chi extension. Frozen readings in
+`experiments/q02_platform_coexistence/README.md`: R1 = chi_typ's argmax
+W* has mid-crossover statistics (<r> in [0.42, 0.50]) vs
+CHALLENGES-ERGODIC / -LOCALIZED; R2 = Hill tail index in [1.6, 2.4] at W*.
+Confirms or kills the platform paper's minimal model.
 
 ## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [PREREGISTERED 2026-07-07; runner ready]
 

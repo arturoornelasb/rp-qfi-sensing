@@ -27,6 +27,28 @@ assumed 2 - gamma). Frozen readings in
 alpha varies monotonically inside the phase). Budget: ~30-60 min,
 thread-capped.
 
+**[DONE 2026-07-07 -- literal PARTIAL; physics CONFIRMS the corrected
+normalization.]** D2_meas tracks theory to 0.03-0.05 across the phase
+(0.854/0.608/0.397/0.168 vs 0.8/0.6/0.4/0.2); alpha_diag = 2 - D2_meas
+(dev 0.03-0.06) with alpha_goe ~ 1.00 flat (a dense perturbation is
+D2-BLIND -- the in-situ ergodic reference), so the enhancement
+alpha_diag - alpha_goe = 1 - D2_meas within 0.06 at 4/4 interior points:
+the SAK exponent, in-house, on measured D2. Literal R1 (raw alpha vs
+1 - D2) reads 0/4 -- report #6's shorthand names the ENHANCEMENT
+exponent. Scoping finding for the paper: the figure of merit requires
+FIELD-LIKE (local) coupling to the sensed parameter. Ergodic control
+alpha = 0.500 is the gRP bandwidth artifact (chi ~ N^gamma, gamma < 1),
+quantitatively understood.
+
+## Q1b -- Enhancement-exponent gate, fresh seed [PREREGISTERED 2026-07-07]
+
+Converts Q1's post-hoc reconciliation into a frozen-criteria verdict:
+identical design, independent seed (8), gate R1' =
+|(alpha_diag - alpha_goe) - (1 - D2_meas)| <= 0.15 at >= 3/4 interior
+gammas (R2 unchanged). Readings frozen in
+`experiments/q01b_enhancement_gate/README.md` BEFORE its run (gate chosen
+from Q1's seed-7 data; Q1b's draws are independent).
+
 ## Q2 -- DR-A: the platform coexistence test [REGISTERED, design level]
 
 Report #5 open-Q2, the decisive test of the Part-1 minimal model: does an

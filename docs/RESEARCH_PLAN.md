@@ -1,0 +1,60 @@
+# Research plan and experiment registry
+
+Target: the two-part RP<->QFI paper (platform + D2 figure of merit) defined
+by deep-research reports #5 (classical->quantum bridge: CONSTRUCT, on an
+interacting tilted+disordered lattice, chi_f(h) = QFI/4) and #6
+(multifractality-enhanced sensing: Kravtsov's exact RP result -> sensitivity
+exponent ~ 1 - D2; must isolate fractality from criticality). Reports live
+in the dossier repo
+(`lopez-gonzalez-research-analysis/deep_research_interferometria_atomica/`).
+
+Policy: preregister readings before execution; freeze executed experiments;
+one commit per unit; runs are serial with the plates-rp-fem queue when the
+machine is CPU-bound.
+
+## Q1 -- DR-B: chi_f scaling vs D2 at fixed criticality distance [PREREGISTERED 2026-07-07]
+
+The load-bearing claim of Part 2, and the referee crux report #6 flagged:
+show the chi enhancement is a function of the FRACTAL DIMENSION along the
+RP non-ergodic-extended phase, not a critical-point effect. Generalized-RP
+ensemble H = diag(eps) + N^{-gamma/2} W; interior points gamma in
+{1.2, 1.4, 1.6, 1.8} (>= 0.2 from both phase edges), controls at 0.5
+(ergodic) and 2.5 (localized); N = 256..4096; chi_f per mid-spectrum
+eigenstate for a diagonal (field-like) perturbation (primary) and a
+normalized GOE perturbation (secondary); D2 MEASURED from IPR scaling (not
+assumed 2 - gamma). Frozen readings in
+`experiments/q01_chi_vs_d2/README.md` (R1: alpha tracks 1 - D2_meas; R2:
+alpha varies monotonically inside the phase). Budget: ~30-60 min,
+thread-capped.
+
+## Q2 -- DR-A: the platform coexistence test [REGISTERED, design level]
+
+Report #5 open-Q2, the decisive test of the Part-1 minimal model: does an
+interacting tilted+disordered 1D lattice (Bose-Hubbard chain at small
+filling, or interacting Aubry-Andre-Harper) show a genuine Poisson->GOE
+(RP-type) crossover in the SAME accessible parameter window where its
+fidelity susceptibility to the tilt h is large -- and does the chi_f
+DISTRIBUTION carry the predicted GOE x^-2 heavy tail? Design: exact
+diagonalization, L ~ 12-16 sites / few bosons (Hilbert dims 1e3-1e4),
+disorder + interaction knobs source the RP structure, tilt enters ONLY as
+the sensed parameter; per-window <r> statistics alongside chi_f(h);
+readings to be frozen in the experiment README before its run. Confirms or
+kills the platform paper's minimal model.
+
+## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [REGISTERED, design level]
+
+Report #6 open-Q2: no metrological quantity has ever been computed in the
+geometry-only Sierpinski non-ergodic-extended system. Compute QFI /
+fidelity susceptibility for tight-binding states on a Sierpinski gasket
+(fractality from geometry, zero disorder): is chi enhanced, and does it
+track the (geometric) D2? The decisive isolation leg complementing Q1.
+Runner deferred until Q1 executes.
+
+## Deferred / watch
+
+- Report #6 open-Q3 (sign criterion: RP enhances, 3D-Anderson suppresses --
+  where does the plate sit?) -- theory question, revisit after Q1 data.
+- Report #6 open-Q4 (many-body D2 inheritance in the Q2 platform) -- attach
+  to Q2 if its crossover window is found.
+- P3/P4/P5/P6 of the deep-research queue stay in the dossier repo
+  (deep-research API runs, currently paused).

@@ -75,6 +75,19 @@ W* has mid-crossover statistics (<r> in [0.42, 0.50]) vs
 CHALLENGES-ERGODIC / -LOCALIZED; R2 = Hill tail index in [1.6, 2.4] at W*.
 Confirms or kills the platform paper's minimal model.
 
+**[DONE 2026-07-07 -- CHALLENGES (by the frozen gate); re-scoped finding
+recorded.]** Textbook crossover (<r> 0.532 -> 0.386); chi_typ peaks at
+the crossover's ergodic EDGE (W* = 2, <r> = 0.520; the in-band W = 3
+value is within 0.38 ln-units), NOT mid-crossover -> R1
+CHALLENGES-ERGODIC. R2 SUPPORTS: Hill = 1.96-2.04 across the GOE regime
+(the predicted x^-2 tail). Key structure: inside the crossover the tail
+index drops below 2 (1.73/1.54) -- mean chi explodes on rare resonances
+while typical collapses; sensitivity there is estimator-dependent.
+Platform statement re-scoped: max TYPICAL sensitivity at the chaotic
+edge; the crossover window offers heavy-tailed rare-event gains only.
+Q2c registered (design level): does W*(L) track W_c(L) with size, or pin
+to fixed W (finer grid 2-3.5, sizes 12/14/16 windowed).
+
 ## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [PREREGISTERED 2026-07-07; runner ready]
 
 Report #6 open-Q2: no metrological quantity has ever been computed in the

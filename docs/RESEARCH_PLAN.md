@@ -135,6 +135,26 @@ RP-like regime is the metrologically relevant one. Q3c (optional,
 design level): stratified/energy-resolved gasket analysis if the paper
 needs this leg sharpened.
 
+## Q4 -- Operator-structure scope law [DONE 2026-07-09]
+
+Frozen classification delivered: diag INHERITS (both gammas); banded
+(range 8) CONDITIONAL -- 58% at gamma = 1.4, full at 1.8, i.e. a
+short-range operator inherits once its range <= the fractal support
+scale; lowrank (collective) BLIND; dense BLIND. Platform design rule:
+SENSE WITH LOCAL COUPLINGS. (Tilt/position = field-like: the Q2 choice
+was right by construction.)
+
+## Q5 -- PBRM third family [DONE 2026-07-09 -- EXTENDS, 3/3]
+
+Critical PBRM at b = 0.5/1.5/4.0: enh = 1 - D2_meas within 0.016-0.064
+at all three bandwidths. **CRITERION REVISED:** with Q1b (RP yes) and
+Q3b (gasket no), the enhancement law is generic to MULTIFRACTAL STATES
+OF RANDOM ENSEMBLES -- what the gasket lacked was randomness (exact
+deterministic multiplets), not RP miniband structure specifically. This
+supersedes the Q3b-era phrasing "RP-phase-specific"; the Part-2 paper's
+criterion: multifractal support + random local statistics + field-like
+coupling.
+
 ## Deferred / watch
 
 - Report #6 open-Q3 (sign criterion: RP enhances, 3D-Anderson suppresses --

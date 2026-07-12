@@ -88,6 +88,15 @@ edge; the crossover window offers heavy-tailed rare-event gains only.
 Q2c registered (design level): does W*(L) track W_c(L) with size, or pin
 to fixed W (finer grid 2-3.5, sizes 12/14/16 windowed).
 
+**[Q2c-lite DONE 2026-07-09 -- TRACKING at two sizes; Q2c-full DONE
+2026-07-12 -- TRACKING-CONFIRMED at three sizes.]** L = 16 (dim 12,870,
+6 realizations/W, evr-certified 7/7 cells, the numpy-dsyevd pitfall
+bypassed by design): W* = 2.00/2.25/2.64 rides W_c = 2.88/3.10/3.19
+(cumulative gap 0.33 <= 0.5, both steps same-sign). The published
+platform statement's registered follow-up closes AFFIRMATIVE: the
+typical-sensitivity peak is pinned to the crossover's moving ergodic
+edge, not to fixed disorder.
+
 ## Q3 -- DR-C: fractality without disorder (Sierpinski NEM) [PREREGISTERED 2026-07-07; runner ready]
 
 Report #6 open-Q2: no metrological quantity has ever been computed in the

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or cite the figure of merit, please cite the paper below."
+title: "rp-qfi-sensing: preregistered numerical companion of 'Multifractality as a sensing resource' (the D2 figure of merit)"
+authors:
+  - family-names: "Ornelas Brand"
+    given-names: "J. Arturo"
+    affiliation: "Independent Researcher, Aguascalientes, México"
+type: software
+version: "0.1.0"
+date-released: "2026-07-11"
+license: MIT
+keywords:
+  - quantum Fisher information
+  - fidelity susceptibility
+  - Rosenzweig-Porter model
+  - multifractality
+  - quantum sensing
+  - random matrix theory
+# doi: <fill with the paper's Zenodo DOI after publishing>

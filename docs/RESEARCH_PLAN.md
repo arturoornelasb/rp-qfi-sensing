@@ -5,7 +5,7 @@ by deep-research reports #5 (classical->quantum bridge: CONSTRUCT, on an
 interacting tilted+disordered lattice, chi_f(h) = QFI/4) and #6
 (multifractality-enhanced sensing: Kravtsov's exact RP result -> sensitivity
 exponent ~ 1 - D2; must isolate fractality from criticality). Reports live
-in the dossier repo
+in the private research record
 (`the program's private research record, deep_research_interferometria_atomica/`).
 
 Policy: preregister readings before execution; freeze executed experiments;
@@ -161,5 +161,5 @@ coupling.
   where does the plate sit?) -- theory question, revisit after Q1 data.
 - Report #6 open-Q4 (many-body D2 inheritance in the Q2 platform) -- attach
   to Q2 if its crossover window is found.
-- P3/P4/P5/P6 of the deep-research queue stay in the dossier repo
+- P3/P4/P5/P6 of the deep-research queue stay in the private research record
   (deep-research API runs, currently paused).

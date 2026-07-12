@@ -3,7 +3,7 @@
 **Companion repository of the published paper:** J. A. Ornelas Brand (2026), *Multifractality as a sensing resource: a D2 figure of merit for Rosenzweig-Porter systems, and a lattice platform*, Zenodo v0.1.0, [doi:10.5281/zenodo.21316839](https://doi.org/10.5281/zenodo.21316839).
 
 In-house de-risking experiments for the **RP ↔ QFI sensitivity-map program**
-— the two-part paper defined by deep-research reports #5 and #6 (dossier
+— the two-part paper defined by deep-research reports #5 and #6 (private research record,
 repo `the program's private research record, deep_research_interferometria_atomica/`):
 
 - **Part 1 (platform):** interacting tilted+disordered optical lattice;

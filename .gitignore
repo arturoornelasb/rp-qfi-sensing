@@ -1,3 +1,9 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# build and run logs (results of record live in RESULTS/HALLAZGOS + json)
+*.log
+*.aux
+*.out
+*.err

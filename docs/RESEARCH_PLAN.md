@@ -6,7 +6,7 @@ interacting tilted+disordered lattice, chi_f(h) = QFI/4) and #6
 (multifractality-enhanced sensing: Kravtsov's exact RP result -> sensitivity
 exponent ~ 1 - D2; must isolate fractality from criticality). Reports live
 in the dossier repo
-(`lopez-gonzalez-research-analysis/deep_research_interferometria_atomica/`).
+(`the program's private research record, deep_research_interferometria_atomica/`).
 
 Policy: preregister readings before execution; freeze executed experiments;
 one commit per unit; runs are serial with the plates-rp-fem queue when the

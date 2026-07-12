@@ -2,7 +2,7 @@
 
 In-house de-risking experiments for the **RP ↔ QFI sensitivity-map program**
 — the two-part paper defined by deep-research reports #5 and #6 (dossier
-repo `lopez-gonzalez-research-analysis/deep_research_interferometria_atomica/`):
+repo `the program's private research record, deep_research_interferometria_atomica/`):
 
 - **Part 1 (platform):** interacting tilted+disordered optical lattice;
   observable = fidelity susceptibility chi_f(h) = QFI/4; RP structure
@@ -35,5 +35,5 @@ experiments are FROZEN, one commit per unit of work.
 ## Environment
 
 Pure NumPy (MKL-backed); run with the `plates-fem` conda env's python
-(`a conda python with numpy/scipy`) or any
+(a conda environment with numpy/scipy, e.g. `plates-fem`) or any
 numpy >= 1.26.

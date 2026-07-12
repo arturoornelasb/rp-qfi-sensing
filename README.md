@@ -39,3 +39,8 @@ experiments are FROZEN, one commit per unit of work.
 Pure NumPy (MKL-backed); run with the `plates-fem` conda env's python
 (a conda environment with numpy/scipy, e.g. `plates-fem`) or any
 numpy >= 1.26.
+
+## Licensing
+
+- Code: MIT (see `LICENSE`).
+- Findings notes, results documents, and figures: CC-BY-NC-4.0, matching the paper (see `NOTES-LICENSE.md`).

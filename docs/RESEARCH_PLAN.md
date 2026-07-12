@@ -135,6 +135,19 @@ RP-like regime is the metrologically relevant one. Q3c (optional,
 design level): stratified/energy-resolved gasket analysis if the paper
 needs this leg sharpened.
 
+**[Q3c DONE 2026-07-12 -- HIDDEN-STRATUM: the null has structure.]**
+Stratified by class (reg/mult) + 4 energy windows, frozen R1/R2/R3:
+the REGULAR (non-degenerate) states are near-ergodic (D2 = 0.885) and
+FOLLOW the 1-D2 law (dev 0.049 vs Q3b pooled 0.816); the exact
+MULTIPLETS -- where the gasket's fractal weight lives (D2 = 0.591) --
+show ACTIVE SUPPRESSION (enh = -0.42): the Anderson-like branch,
+measured in-house. Mechanistic refinement of the paper's criterion:
+randomness matters because it LIFTS exact degeneracies while keeping
+multifractal correlations; deterministic fractality packages its
+states into degenerate multiplets that suppress. Both branches of
+report #6 open-Q3 now measured with one instrument. Candidate: v0.2
+scope section or the second note.
+
 ## Q4 -- Operator-structure scope law [DONE 2026-07-09]
 
 Frozen classification delivered: diag INHERITS (both gammas); banded

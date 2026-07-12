@@ -1,0 +1,349 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+\newcommand{\rmean}{\langle r\rangle}
+\newcommand{\chif}{\chi_{f}}
+
+\title{\textbf{Multifractality as a sensing resource:\\ a $D_2$ figure of merit for Rosenzweig--Porter
+systems,\\ and a lattice platform}}
+\author{J. Arturo Ornelas Brand\\[2pt]
+\small Independent Researcher, Aguascalientes, M\'exico\\
+\small \texttt{arturoornelas62@gmail.com}}
+\date{July 11, 2026 --- draft v0.1 (for review)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Two established results have never been composed. The fidelity susceptibility of a quantum
+state to a Hamiltonian parameter equals one quarter of its quantum Fisher information,
+$F_Q = 4\chif$~\cite{liu2014,safranek2017}; and an exact calculation in the Rosenzweig--Porter (RP)
+ensemble shows that eigenfunction fidelity susceptibility is \emph{enhanced} in the fractal
+non-ergodic-extended phase~\cite{sak2022}. Composed, they make the eigenvector fractal dimension
+$D_2$ --- until now a diagnostic of localization physics --- an operational \textbf{metrological
+figure of merit}: along the RP fractal phase, at fixed distance from criticality and for field-like
+(local) couplings to the sensed parameter, the finite-size enhancement exponent of the quantum
+Fisher information over the ergodic reference is $1-D_2$. We confirm this in-house under
+preregistered criteria on the generalized-RP ensemble with $D_2$ \emph{measured} from
+inverse-participation-ratio scaling (not assumed): enhancement $=1-D_2$ within $0.15$ at $4/4$
+interior points of the phase (deviations $0.009$--$0.078$; correlation $0.996$). Two further
+preregistered experiments fix the criterion's boundaries: geometric fractality alone --- a
+disorder-free Sierpinski-gasket lattice with certified eigenpairs and degenerate-multiplet
+treatment --- shows \textbf{no effect} (enhancement $-0.12$, $|{\cdot}|<0.15$; the RP formula does
+not extend), while critical power-law banded random matrices \textbf{extend the law} at all three
+tested bandwidths (deviations $0.016$--$0.064$). The criterion is therefore: \emph{multifractal
+eigenstates of random ensembles, sensed through local couplings} --- randomness, not fractal
+geometry, is the missing ingredient, and an operator-structure scope law (diagonal inherits;
+short-range inherits once its range fits the fractal support; collective and dense couplings are
+$D_2$-blind) gives the design rule. On the platform side we construct --- because it cannot be
+cited --- the minimal model that carries the physics onto cold atoms: an \emph{interacting
+tilted$+$disordered lattice} in which the tilt is only the sensed parameter (the bare
+Wannier--Stark ladder is integrable, so sourcing RP statistics from gravity would be immediately
+refutable) and the dense RP-like spectrum comes from interactions and disorder. A preregistered
+coexistence test on the interacting $t$--$V$ chain finds a textbook ergodic$\to$localized crossover
+($\rmean$: $0.532\to0.386$) whose \emph{typical} susceptibility peaks at the crossover's ergodic
+edge --- not mid-crossover --- with the predicted heavy $x^{-2}$ tail (Hill index $1.96$--$2.04$)
+in the chaotic regime and estimator-dependent rare-event gains inside the crossover. The platform
+statement is scoped accordingly, and one instrument caveat is stated up front: this attaches to
+\emph{lattice/Bloch} gravimetry, not to free-fall light-pulse interferometry. Tier-2 throughout:
+a shared random-matrix description with preregistered numerical evidence, not a hardware claim.
+\end{abstract}
+
+\section{Introduction}
+
+Two sibling programs measure the same observable on different substrates. A physics program tests a
+Rosenzweig--Porter (RP) hypothesis for freely vibrating plates --- proposing the hypothesis with a
+preregistered eigenvector fractal dimension~\cite{ornelas2026hyp} and then executing its registered
+numerical campaign on true operators~\cite{ornelas2026fem}. An AI program finds that a neural
+network's fabricated Poisson$\to$GOE transition carries genuinely RP-multifractal Hessian
+eigenvectors, $D_2 = 0.76$ within an architecture band $[0.56,0.80]$~\cite{ornelas2026rmt}. In both,
+$D_2$ is the \emph{decisive diagnostic}: it separates a genuine multifractal phase from spectra that
+merely imitate intermediate spacing statistics.
+
+This note asks what $D_2$ is \emph{for}, beyond diagnosis. The metrology literature has recently
+begun to name multifractal states ``a resource for quantum sensing''~\cite{hu2026}, and
+criticality-enhanced sensing is an established framework~\cite{sahoo2024,liu2024me}; but no
+standalone, quantitative figure of merit tied to the fractal dimension itself has been formulated
+--- the notion is adjacent and nameable, yet the cell is empty. Meanwhile the two ingredients of
+such a figure of merit have existed, separately, for years: the identity $F_Q = 4\chif$ between
+quantum Fisher information and fidelity susceptibility~\cite{liu2014,safranek2017,hauke2016}, and
+Kravtsov and collaborators' exact result that eigenfunction fidelity susceptibility is enhanced in
+the RP fractal phase~\cite{sak2022} --- derived in the same ensemble the plate program
+uses~\cite{kravtsov2015}.
+
+We compose them, state the resulting figure of merit operationally, and then do what the parent
+programs' discipline requires: preregister the readings, run the tests, and report the boundaries
+of validity with the same weight as the confirmations. The result is a criterion --- multifractal
+eigenstates of \emph{random} ensembles, sensed through \emph{local} couplings --- that survived one
+designed attempt to break it (a disorder-free fractal lattice, where it correctly reports no
+effect) and extended without adjustment to a third ensemble family. Part~1 of the contribution
+constructs the minimal cold-atom platform on which the figure of merit is operational; Part~2 is
+the figure of merit itself. We present Part~2 first, since it is load-bearing.
+
+\section{The figure of merit}
+\label{sec:fom}
+
+\textbf{Definitions.} For a Hamiltonian $H(h) = H + h\,V$ and eigenstate $|n(h)\rangle$, the
+fidelity susceptibility is
+\[
+\chif^{(n)} \;=\; \lim_{h\to0}\, \frac{-2\ln|\langle n(0)|n(h)\rangle|}{h^{2}}
+\;=\; \sum_{m\neq n} \frac{|\langle m|V|n\rangle|^{2}}{(E_m-E_n)^{2}},
+\]
+and $F_Q = 4\chif$ is the quantum Fisher information of the eigenstate as a probe of
+$h$~\cite{liu2014,safranek2017}: the Cram\'er--Rao-optimal sensitivity to the parameter, up to a
+factor fixed by convention. Spectroscopy-accessible formulations of QFI are
+standard~\cite{hauke2016}.
+
+\textbf{The exact input.} In the RP ensemble --- $H = \mathrm{diag}(\epsilon_i) +
+N^{-\gamma/2}W$ with GOE $W$ --- the fractal non-ergodic-extended phase at $1<\gamma<2$ has
+eigenstates occupying $N^{D_2}$ of $N$ available sites, $D_2 = 2-\gamma$~\cite{kravtsov2015}.
+Skvortsov, Amini and Kravtsov~\cite{sak2022} computed the eigenfunction fidelity susceptibility
+exactly in this ensemble and found it \emph{enhanced} in the fractal phase: the mini-band structure
+concentrates spectral weight at small denominators.
+
+\textbf{The operational statement.} Let $\chif^{\rm typ}(N)$ be the typical (log-averaged)
+mid-spectrum fidelity susceptibility at system size $N$ for a \emph{field-like} perturbation ---
+diagonal in the localization basis, the analogue of a local field or a tilt --- and let
+$\chif^{\rm erg}(N)$ be the same quantity for a dense (GOE-like) perturbation, which we show below
+is $D_2$-blind and therefore serves as the in-situ ergodic reference. Define the enhancement
+exponent $\alpha_{\rm enh}$ by $\chif^{\rm typ}/\chif^{\rm erg} \sim N^{\alpha_{\rm enh}}$. The
+figure of merit is
+\[
+\boxed{\;\alpha_{\rm enh} \;=\; 1 - D_2\;}
+\]
+along the fractal phase, at fixed distance from its edges, with $D_2$ the \emph{measured}
+inverse-participation-ratio scaling dimension of the same eigenstates. Smaller fractal dimension
+--- more concentrated states --- buys polynomially more Fisher information per added system size,
+relative to what an ergodic sensor of the same size would gain.
+
+\section{Preregistered confirmation on measured $D_2$}
+\label{sec:q1}
+
+All experiments in this note follow the parent programs'
+discipline~\cite{ornelas2026fem}: readings frozen in the experiment header before the run, verdicts
+quoted as frozen, amendments dated. The registry and code are in the companion
+repository.\footnote{\texttt{rp-qfi-sensing}; experiments \texttt{q01}--\texttt{q05}. Release
+plans for the repository accompany the deposit of this note.}
+
+\textbf{Design (Q1/Q1b).} Generalized-RP ensemble at interior points
+$\gamma \in \{1.2, 1.4, 1.6, 1.8\}$ --- each at least $0.2$ from both phase edges, so criticality
+is held at fixed distance --- with ergodic ($\gamma=0.5$) and localized ($\gamma=2.5$) controls;
+$N = 256$--$4096$; $\chif$ per mid-spectrum eigenstate for a diagonal (field-like) perturbation and
+for a normalized GOE perturbation; $D_2$ measured from IPR scaling, never assumed equal to
+$2-\gamma$.
+
+\textbf{Results.} Measured $D_2 = 0.854/0.608/0.397/0.168$ against the theoretical
+$0.8/0.6/0.4/0.2$ (agreement $0.03$--$0.05$). The diagonal-coupling exponent obeys
+$\alpha_{\rm diag} = 2-D_2$ within $0.03$--$0.06$, while the GOE-coupling exponent is flat at
+$\alpha_{\rm GOE} \approx 1.00$ across the entire phase: \textbf{a dense perturbation is
+$D_2$-blind}, which is what licenses it as the in-situ ergodic reference. The enhancement exponent
+$\alpha_{\rm diag}-\alpha_{\rm GOE}$ equals $1-D_2$ within $0.06$ at all four interior points. A
+second, fully frozen-gate run on an independent seed (Q1b; gate $|\alpha_{\rm enh}-(1-D_2)| \le
+0.15$ at $\ge 3/4$ points, declared before the run) passes $4/4$ with deviations
+$0.015/0.018/0.009/0.078$ and $\mathrm{corr}(\alpha_{\rm enh},\,1-D_2) = 0.996$; monotonicity
+across the phase passes with total variation $0.709$. One scoping finding emerged and is promoted
+to part of the claim: \emph{the figure of merit requires field-like coupling to the sensed
+parameter} --- it is a statement about how multifractal support meets a local operator, not about
+the spectrum alone.
+
+\section{The boundaries: what multifractality is not enough}
+\label{sec:scope}
+
+\textbf{Geometric fractality alone fails (Q3b).} The sharpest referee question the composition
+faces~\cite{sak2022,tokarczyk2026} is whether ``multifractality helps'' is generic. We built the
+adversarial test: a disorder-free Sierpinski-gasket tight-binding lattice, whose eigenstates are
+multifractal from geometry alone~\cite{sierpinski2025} --- no randomness, no RP mini-bands.
+Instrumentation matters here and is reported because it changed a verdict: a first run was
+invalidated by an eigensolver defect (LAPACK \texttt{dsyevd} via \texttt{numpy} returning
+eigenvalues off by up to $31$ at $N=9843$) and by a degeneracy-exclusion design that starved the
+statistics; the certified rerun (independent eigenvalue reference, \texttt{evr}-driver vectors,
+agreement and residual gates per size, and degenerate-multiplet subspace rotation --- correct
+degenerate perturbation theory) passes certification at all four sizes with full-window statistics.
+Frozen verdict: enhancement $-0.123$, i.e.\ \textbf{no effect} ($|{\cdot}|<0.15$), and the RP
+formula does not extend (deviation $0.816$ from $1-D_2$). The robust statement, given the gasket's
+composition scatter, is the absence of any consistent enhancement.
+
+\textbf{A third random family extends the law (Q5).} Critical power-law banded random
+matrices~\cite{mirlin1996} at bandwidths $b = 0.5/1.5/4.0$: $\alpha_{\rm enh} = 1-D_2^{\rm meas}$
+within $0.016$--$0.064$ at all three. Combined with Q1b (RP: yes) and Q3b (deterministic gasket:
+no), the criterion is not ``RP specifically'' and not ``fractality generically'' but:
+\[
+\textbf{multifractal eigenstates of random ensembles, sensed through local couplings.}
+\]
+What the gasket lacked was randomness --- its exact deterministic multiplets carry no mini-band
+level structure for a local operator to exploit.
+
+\textbf{The suppression counterexample, reconciled.} In the 3D Anderson model, fidelity
+susceptibility is \emph{sub}maximal at the multifractal critical point, and that suppression is
+attributed to the fractal structure of critical states~\cite{tokarczyk2026}. This does not
+contradict the figure of merit; it delimits it. The RP result lives on an extended fractal
+\emph{phase} at fixed criticality distance; the Anderson result compares a single critical
+\emph{point} against its own ergodic side. ``Multifractality helps'' is model-dependent --- which
+is precisely why the criterion above names the random-ensemble phase, not multifractality at
+large.
+
+\section{The operator scope law}
+\label{sec:q4}
+
+Which couplings inherit the enhancement (Q4, frozen classification on gRP at
+$\gamma \in \{1.4, 1.8\}$):
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+coupling $V$ & verdict & reading\\
+\midrule
+diagonal (field-like) & \textbf{inherits} & at both $\gamma$; the figure of merit's home\\
+banded, range 8 & \textbf{conditional} & $58\%$ at $\gamma=1.4$; full at $\gamma=1.8$\\
+low-rank (collective) & blind & no $D_2$ dependence\\
+dense (GOE-like) & blind & the ergodic reference of \S\ref{sec:q1}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A short-range operator inherits the enhancement once its range fits inside the fractal support
+scale; collective and dense couplings never do. The design rule for any platform is therefore:
+\textbf{sense with local couplings}. (The tilt used in \S\ref{sec:platform} is field-like by
+construction.)
+
+\section{The platform: an interacting tilted$+$disordered lattice}
+\label{sec:platform}
+
+\textbf{Why constructed rather than cited.} A systematic search~\cite{ornelas2026fem} of the
+bridge's four required pieces found each published separately --- gravity entering a lattice as a
+Wannier--Stark tilt with $\partial E_n/\partial g$ a literal eigenvalue
+derivative~\cite{zapata2001,wilkinson1996}; spectroscopic access to QFI~\cite{hauke2016};
+$F_Q = 4\chif$ instantiated on tilted and quasiperiodic lattices~\cite{sahoo2024,sahoo2024b} ---
+but never composed with RP-class level statistics, and with two load-bearing caveats confirmed
+independently: the bare Wannier--Stark ladder is \emph{integrable} (an equidistant picket fence,
+the opposite of a dense RP spectrum), and the existing cold-atom QFI enhancements are
+criticality effects with no level-statistics content. The minimal defensible model is therefore an
+\textbf{interacting, disordered, tilted lattice} (many-body Bose--Hubbard or interacting
+Aubry--Andr\'e--Harper class), with a non-negotiable design rule: \emph{the tilt is only the sensed
+parameter}; the RP-like statistics must come from interactions and disorder, never from gravity.
+
+\textbf{The coexistence test (Q2).} The decisive preregistered question: does such a system show
+its Poisson$\leftrightarrow$GOE crossover in the same window where the fidelity susceptibility to
+the tilt is large? Instantiation: the interacting $t$--$V$ chain (spinless fermions, $J=V=1$) with
+onsite disorder $W$ and the tilt as sensed parameter at $h=0$; $L=12$ (Hilbert dimension 924, 200
+realizations) and $L=14$ (3432, 64); first realization of every cell certified against an
+independent eigensolver. Results: a textbook crossover ($\rmean: 0.532 \to 0.386$ as $W: 0.5\to8$);
+the \emph{typical} susceptibility peaks at $W^{*}=2$ where $\rmean = 0.520$ --- the crossover's
+\textbf{ergodic edge}, not mid-crossover, so the frozen mid-crossover gate reads CHALLENGES and the
+platform statement is re-scoped accordingly. The predicted GOE $x^{-2}$ heavy tail of the $\chif$
+distribution is confirmed (Hill index $1.96$--$2.04$ across the chaotic regime); \emph{inside} the
+crossover the tail index drops below $2$ ($1.73/1.54$): the mean susceptibility explodes on rare
+resonances while the typical value collapses, so sensitivity there is estimator-dependent.
+
+\textbf{The platform statement (as re-scoped, honestly).} Maximum \emph{typical} sensitivity to a
+field-like parameter sits at the chaotic edge of the crossover; the crossover interior offers
+heavy-tailed, rare-event gains that a mean-based protocol can harvest and a typical-based protocol
+cannot. Whether the peak tracks the finite-size crossover point or pins to fixed disorder is
+registered as the follow-up (Q2c, finer grid, three sizes).
+
+\textbf{The instrument caveat, stated before it is asked.} A light-pulse (Kasevich--Chu) atom
+interferometer reads gravity from a free-fall phase $\Delta\phi = k_{\rm eff}\,g\,T^{2}$, which is
+not a spectral quantity. Everything above lives on \emph{lattice/Bloch gravimetry} --- the
+Wannier--Stark/Bloch-oscillation class of instruments, a cousin of the free-fall interferometer,
+not its own readout. The bridge from RP structure to a light-pulse phase, if one exists, is future
+work and is not claimed here.
+
+\section{Relation to the parent programs, and outlook}
+\label{sec:outlook}
+
+The figure of merit gives the parent programs' $D_2$ measurements an operational meaning.
+The AI program's fabricated transition ($D_2 = 0.76$, band $[0.56,0.80]$~\cite{ornelas2026rmt})
+and the designed plate assembly that lands in the same band at router-like coupling
+($D_2 = 0.63$--$0.69$~\cite{ornelas2026fem}) sit squarely in the regime the criterion names:
+multifractal states of effectively random couplings. Nature's free plate, whose genuine
+true-operator effect is an order of magnitude weaker ($D_2 \approx 0.01$--$0.25$, ordered by
+boundary adaptedness~\cite{ornelas2026fem}), correspondingly offers little of this resource ---
+consistent with the campaign's central protocol-artifact finding. Enhancement exponents of
+$1-D_2 \approx 0.24$--$0.44$ (AI band) versus $\approx 0.3$--$0.4$ (designed assemblies) are, on
+this account, engineering targets rather than diagnostics.
+
+Open, in order of leverage: (i) the Q2c size-tracking question above; (ii) energy-resolved
+sharpening of the gasket null (registered as Q3c); (iii) the feasibility of an atomic
+GOE$\to$GUE spacing measurement --- no atomic system has ever shown that crossover in level
+statistics, and the mechanical version is now fully characterized
+in-silico~\cite{ornelas2026fem} --- for which the kicked-rotor route remains the candidate
+platform; and (iv) the standing scoop-watch on multifractal-sensing formulations, since the
+ingredients of this composition are public and recent~\cite{sak2022,hu2026}.
+
+\section{Methods and reproducibility}
+\label{sec:methods}
+
+Generalized-RP ensemble $H = \mathrm{diag}(\epsilon_i) + N^{-\gamma/2}W$, $\epsilon_i$ i.i.d.,
+$W$ GOE; $\chif$ summed exactly over the spectrum per mid-window eigenstate; typical values are
+log-averages; $D_2$ from IPR ladders over $N = 256$--$4096$ with window fractions held fixed.
+Spacing statistics via the consecutive-spacing ratio~\cite{atas2013,oganesyan2007}, per symmetry
+sector, against finite-size baselines computed with the identical protocol. Eigenpair
+certification --- an independent no-vector eigenvalue reference, driver-level cross-checks,
+agreement and residual gates per size --- is mandatory throughout; the one solver defect found
+(\S\ref{sec:scope}) was caught by these gates and is documented with the fix. Every experiment
+carries its preregistered reading in the script header; all numbers quoted above are frozen
+verdicts. Compute: CPU-only commodity workstation.
+
+\begin{thebibliography}{99}
+\footnotesize
+\bibitem{liu2014} W.-L.~Liu, X.~Xiong, L.~Song, X.~Wang (2014). Fidelity susceptibility and quantum
+Fisher information for density operators with arbitrary ranks. \emph{Physica A} \textbf{410}, 167.
+arXiv:1401.3154.
+\bibitem{safranek2017} D.~\v{S}afr\'anek (2017). Discontinuities of the quantum Fisher information
+and the Bures metric. \emph{Phys.\ Rev.\ A} \textbf{95}, 052320. arXiv:1612.04581.
+\bibitem{hauke2016} P.~Hauke, M.~Heyl, L.~Tagliacozzo, P.~Zoller (2016). Measuring multipartite
+entanglement through dynamic susceptibilities. \emph{Nature Physics} \textbf{12}, 778.
+\bibitem{sak2022} M.~A.~Skvortsov, M.~Amini, V.~E.~Kravtsov (2022). Sensitivity of (multi)fractal
+eigenstates to a perturbation of the Hamiltonian. \emph{Phys.\ Rev.\ B} \textbf{106}, 054208.
+arXiv:2205.10297.
+\bibitem{kravtsov2015} V.~E.~Kravtsov, I.~M.~Khaymovich, E.~Cuevas, M.~Amini (2015). A random
+matrix model with localization and ergodic transitions. \emph{New J.\ Phys.} \textbf{17}, 122002.
+\bibitem{mirlin1996} A.~D.~Mirlin, Y.~V.~Fyodorov, F.-M.~Dittes, J.~Quezada, T.~H.~Seligman
+(1996). Transition from localized to extended eigenstates in the ensemble of power-law banded
+random matrices. \emph{Phys.\ Rev.\ E} \textbf{54}, 3221.
+\bibitem{sierpinski2025} Non-ergodic multifractal eigenstates from geometry alone: substitutional
+defects on the Sierpi\'nski gasket. \emph{Commun.\ Phys.} (2025), s42005-025-02455-w.
+arXiv:2410.18559.
+\bibitem{tokarczyk2026} P.~Tokarczyk, L.~Vidmar, A.~Polkovnikov, P.~\L{}yd\.zba (2026). Fidelity
+susceptibility across the Anderson transitions. arXiv:2605.25594.
+\bibitem{hu2026} Hu et al.\ (2026). Preparation of critical/multifractal states in ultracold
+atoms. arXiv:2605.21441.
+\bibitem{sahoo2024} A.~Sahoo, U.~Mishra, D.~Rakshit (2024). Localization-driven quantum sensing.
+\emph{Phys.\ Rev.\ A} \textbf{109}, L030601. arXiv:2305.02315.
+\bibitem{sahoo2024b} A.~Sahoo, D.~Rakshit (2024). Enhanced sensing of Stark weak field under the
+influence of Aubry--Andr\'e--Harper criticality. arXiv:2408.03232.
+\bibitem{liu2024me} Y.~Liu et al.\ (2024). Fidelity-susceptibility metrology at exact mobility
+edges in generalized AAH models. arXiv:2405.13282.
+\bibitem{zapata2001} I.~Zapata, S.~Stringari et al.\ (2001). Wannier--Stark ladders and gravity.
+\emph{Phys.\ Rev.\ A} \textbf{63}, 023607.
+\bibitem{wilkinson1996} S.~R.~Wilkinson, C.~F.~Bharucha, K.~W.~Madison, Q.~Niu, M.~G.~Raizen
+(1996). Observation of atomic Wannier--Stark ladders in an accelerating optical potential.
+\emph{Phys.\ Rev.\ Lett.} \textbf{76}, 4512.
+\bibitem{atas2013} Y.~Y.~Atas, E.~Bogomolny, O.~Giraud, G.~Roux (2013). Distribution of the ratio
+of consecutive level spacings in random matrix ensembles. \emph{Phys.\ Rev.\ Lett.} \textbf{110},
+084101.
+\bibitem{oganesyan2007} V.~Oganesyan, D.~A.~Huse (2007). Localization of interacting fermions at
+high temperature. \emph{Phys.\ Rev.\ B} \textbf{75}, 155111.
+\bibitem{ornelas2026hyp} J.~A.~Ornelas Brand (2026). \emph{Why Rosenzweig--Porter? Evanescent
+Coupling and a Random Matrix Hypothesis for Intermediate Statistics in Freely Vibrating Plates}.
+Zenodo, v0.4.0. \href{https://doi.org/10.5281/zenodo.21313838}{doi:10.5281/zenodo.21313838}.
+\bibitem{ornelas2026fem} J.~A.~Ornelas Brand (2026). \emph{Open-source finite-element tests of the
+Rosenzweig--Porter hypothesis for freely vibrating plates: preliminary results}. Zenodo.
+\href{https://doi.org/10.5281/zenodo.21314728}{doi:10.5281/zenodo.21314728}.
+\bibitem{ornelas2026rmt} J.~A.~Ornelas Brand (2026). \emph{A random-matrix account of structure
+formation in neural networks}. Zenodo, v0.1.0.
+\href{https://doi.org/10.5281/zenodo.21314469}{doi:10.5281/zenodo.21314469}.
+\end{thebibliography}
+
+\end{document}
